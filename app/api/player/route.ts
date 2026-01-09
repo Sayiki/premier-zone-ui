@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
   if (nation) params.append('nation', nation);
   if (position) params.append('position', position);
 
-  const url = `http://side-project-pldata-zrxrkc:8081/api/v1/player?${params.toString()}`;
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/player?${params.toString()}`;
   console.log('Fetching from:', url);
 
   try {
